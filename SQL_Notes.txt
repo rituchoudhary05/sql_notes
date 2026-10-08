@@ -9,7 +9,7 @@ SQL DOWNLOAD:
 
 6)Setup type -full
 7)execute
-8)next->next->username :ritu,User :localhost->next->next
+8)next->next->username :ritu, User :localhost->next->next
 9)password:12345
 10)finish
 
@@ -17,8 +17,8 @@ SQL DOWNLOAD:
 ----------------------------------------------------------------------------------------------------------------------------
 
 SQL:DBMS(data base management system)
-->SQL(DBMS) ->DATABASES (eg. student,hospital) ->TABLES (eg. student_details,teachers_detail)
-
+->SQL(DBMS) ->DATABASES (eg. student ,hospital) ->TABLES (eg. student_details,teachers_detail)
+ 
 DAY1::
 -DATABASE=Collection of data in can be in tabular form/
 -TABLE->ROW(record)
@@ -141,6 +141,7 @@ TCL → Transactions
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------DAY 3::
+DAY 3::
 
 -Operators eg:
    -> =,>,<,>=,<=
@@ -161,6 +162,19 @@ TCL → Transactions
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 DAY 4::
+
+DDL:
+1)CREATE(create database___, create table _____)
+2)ALTER  - add: adds at end so we can use first as constrait or after 
+    eg:-ADD COLUMN column_name datatype FIRST;
+       -ADD COLUMN column_name datatype AFTER existing_column;
+  - drop : use to end the existance of column or table
+  - rename to: use to change name of any column/table
+  - modify:(it only add datatype , default, not null, position(eg.first),check)
+  - constraits(it add primary key , unique , foreign key ,check)
+3)DROP( drop table___)
+4)TRUNCATE()
+
 
 
 
@@ -202,4 +216,40 @@ QUERIES/COMMANDS:
 
 15)INSERT INTO xyz2(student_id ,student_name,student_adress) VALUES( 1,"ritu","jaipur",default,default)---when you want to use default value by giving field names
 16)INSERT INTO xyz2 VALUES( 1,"ritu","jaipur",default,default)---when you want to use default value without giving field name
+
+
+17)CREATE TABLE student_backup AS SELECT * FROM xyz2;       --- Copy structure + data, not the constraits
+18)drop table student_backup;                               ---to delete the whole table
+
+19)CREATE TABLE student_backup1 LIKE xyz2;                   --- Copy structure only
+20)INSERT INTO student_backup1 SELECT * FROM student;        --- Copy data into an existing table
+
+21)ALTER TABLE student_backup1 RENAME TO sb;                 -- Rename table student_backup1 to sb
+22)ALTER TABLE sb RENAME COLUMN student_id TO id;            -- Rename column student_id to id
+23)ALTER TABLE sb ADD COLUMN father_name VARCHAR(50);        -- Add a new column
+24)ALTER TABLE sb DROP COLUMN father_name;                   -- Delete the column father_name
+25)ALTER TABLE sb MODIFY COLUMN pass_fail char(4) CHECK(pass_fail IN("PASS","FAIL")) NOT NULL DEFAULT "PASS";   -- Modify column datatype + constraint + default value     
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CONCEPTS NEED TO CLEAR:
+-ENUM
+-DATE
+-REGEXP
+-TIMESTAMP
+
+
+
+
+
+
+
+
+
+
+
+
+
 ```
